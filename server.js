@@ -14,6 +14,14 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/posts", require("./routes/postRoutes"));
 app.use("/api/comments", require("./routes/commentRoutes"));
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Blog API is running successfully 🚀",
+  });
+});
+
+
 app.listen(process.env.PORT, () =>
   console.log(`Server running on port ${process.env.PORT}`)
 );
